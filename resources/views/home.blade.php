@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container">
-        <h1>che caxxo sto scrivendo</h1>
+        <h1>TORNIAMO ALLE 16:35</h1>
     </div>
 @endsection
