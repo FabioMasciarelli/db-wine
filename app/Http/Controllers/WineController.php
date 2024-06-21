@@ -13,7 +13,7 @@ class WineController extends Controller
     public function index()
     {
         $wines = Wine::all();
-         return view('wines.index', compact('wines'));
+        return view('wines.index', compact('wines'));
     }
 
     /**
@@ -34,10 +34,12 @@ class WineController extends Controller
 
     /**
      * Display the specified resource.
+     * alessio
      */
     public function show(string $id)
     {
-        //
+        $wines = Wine::findOrFail($id);
+        return view('wines.show', compact('wines'));
     }
 
     /**
@@ -58,9 +60,13 @@ class WineController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * alessio
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $wine = Wine::findOrFail($id);
+        $wine->delete();
+
+        return redirect()->route('wines.index')->with('success', 'Wine deleted successfully');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WineController;
+use App\Models\Wine;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WineController::class, 'index'])->name('home');
+
+
+Route::resource('wines', WineController::class);
