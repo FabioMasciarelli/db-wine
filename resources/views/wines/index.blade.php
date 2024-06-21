@@ -19,7 +19,9 @@
                         <td>{{ $wine->name }}</td>
                         <td>{{ $wine->rating }}</td>
                         <td>{{ $wine->rating_count }}</td>
-                        <td></td>
+                        <td>
+                            <a href="{{ route('wines.edit', $wine->id) }}" class="btn btn-info">Modifica</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
