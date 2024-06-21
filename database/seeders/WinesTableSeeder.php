@@ -15,7 +15,7 @@ class WinesTableSeeder extends Seeder
     {
         $response = Http::withOptions(['verify' => false])->get('https://api.sampleapis.com/wines/reds');
         $data = $response->json();
-<<<<<<< HEAD
+
 
         foreach ($data as $index => $wine) {
             if ($index < 10) {
@@ -38,9 +38,8 @@ class WinesTableSeeder extends Seeder
                 $newWine->save();
             }
         }
-=======
+
         dd($data);
         
->>>>>>> ef57e7f7d0718c66a532d2c1332d75a7cc8b7131
     }
 }
