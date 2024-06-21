@@ -14,14 +14,13 @@
             </thead>
             <tbody>
                 @foreach ($wines as $wine)
-                    
-                <tr>
-                    <th scope="row">{{ $wine->winery }}</th>
-                    <td>{{ $wine->name }}</td>
-                    <td>{{ $wine->rating }}</td>
-                    <td>{{ $wine->rating_count }}</td>
-                </tr>
-
+                    <tr>
+                        <th scope="row">{{ $wine->winery }}</th>
+                        <td>{{ $wine->name }}</td>
+                        <td>{{ $wine->rating }}</td>
+                        <td>{{ $wine->rating_count }}</td>
+                        <td></td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
