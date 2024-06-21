@@ -4,22 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateWinesTable extends Migration
 {
     /**
      * Run the migrations.
-     * 
-     * 
      */
     public function up(): void
     {
         Schema::create('wines', function (Blueprint $table) {
             $table->id();
-            $table->string('brand');
-            $table->string('name');
-            $table->integer('reviews');
-            $table->string('location');
-            $table->string('image');
+            $table->string('winery')->nullable();
+            $table->string('name')->nullable();
+            $table->double('rating', 8, 2)->nullable();
+            $table->integer('rating_count')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->timestamps();
         });
     }
@@ -31,4 +29,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('wines');
     }
-};
+}
