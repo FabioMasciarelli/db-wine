@@ -21,7 +21,8 @@ class WineController extends Controller
      */
     public function create()
     {
-        //
+        $wine = new Wine();
+        return view("wines.create", compact('wine'));
     }
 
     /**
@@ -29,7 +30,12 @@ class WineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $wine = new Wine();
+        $wine->fill($data);
+        $wine->save();
+
+        return redirect()->route("wines.index");
     }
 
     /**
