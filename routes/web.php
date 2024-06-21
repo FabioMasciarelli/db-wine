@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WineController::class, 'index'])->name('home');
 
 
+
 Route::resource('wines', WineController::class);
