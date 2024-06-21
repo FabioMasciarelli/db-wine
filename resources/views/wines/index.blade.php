@@ -9,6 +9,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Rating</th>
                     <th scope="col">Rating Count</th>
+                    <th scope="col">Azioni</th>
                 </tr>
             </thead>
             <tbody>
