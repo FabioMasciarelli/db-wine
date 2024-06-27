@@ -15,17 +15,11 @@
             <tbody>
                 @foreach ($wines as $wine)
                     <tr>
-                        <th scope="row"><a href="{{ route('wines.show', $wine->id) }}">{{ $wine->winery }}</a></th>
-                        <td><a href="{{ route('wines.show', $wine->id) }}">{{ $wine->name }}</a></td>
-                        <td><a href="{{ route('wines.show', $wine->id) }}">{{ $wine->rating }}</a></td>
-                        <td><a href="{{ route('wines.show', $wine->id) }}">{{ $wine->rating_count }}</a></td>
-                        <td>
-                            <form action="{{ route('wines.destroy', $wine->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Elimina</button>
-                            </form>
-                        </td>
+                        <th scope="row">{{ $wine->winery }}</th>
+                        <td>{{ $wine->name }}</td>
+                        <td>{{ $wine->rating }}</td>
+                        <td>{{ $wine->rating_count }}</td>
+                        <td></td>
                     </tr>
                 @endforeach
             </tbody>
